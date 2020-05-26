@@ -23,4 +23,28 @@ public class Product {
 	private BigDecimal price;
 
 	public Product() { }
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public BigDecimal getPrice() {
+		return price;
+	}
 }

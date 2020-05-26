@@ -1,0 +1,479 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shop-List | Bookshop </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../static/images/favicon.ico" th:href="@{/static/images/favicon.ico}">
+    <link rel="apple-touch-icon" href="../static/images/icon.png" th:href="@{/static/images/icon.png}">
+
+    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" th:href="@{'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet" th:href="@{'https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800'}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" th:href="@{'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/bootstrap.min.css" th:href="@{/static/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/plugins.css" th:href="@{/static/css/plugins.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/style.css" th:href="@{/static/style.css}">
+
+    <!-- Modernizer js -->
+    <script type="text/javascript" src="../static/js/vendor/modernizr-3.5.0.min.js" th:src="@{/static/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+<body>
+<!-- Main wrapper -->
+<div class="wrapper" id="wrapper">
+
+    <!-- Header -->
+    <header id="wn__header" class="header__area header__absolute sticky__header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="../static/images/logo.png" alt="logo images"><!--网页的图标 -->
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-none d-lg-block">
+                    <nav class="mainmenu__nav">
+                        <ul class="meninmenu d-flex justify-content-start">
+                            <li><a href="index.html">Home</a>
+                            </li>
+                            <li class="drop"><a href="shopcategorie.html">Books</a>
+                                <div class="megamenu mega03">
+                                    <ul class="item item03">
+                                        <li class="title">Categories</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(0).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=1 ,category= ${cate.get(0).WG_Id} )}">Biography</p></a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(5).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=6 ,category= ${cate.get(5).WG_Id})}">Business</p> </a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(10).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=11 ,category= ${cate.get(10).WG_Id})}">Cookbooks </a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(11).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=12 ,category= ${cate.get(11).WG_Id})}">Health
+                                            & Fitness </a></li>
+                                    </ul>
+                                    <ul class="item item03">
+                                        <li class="title">Customer Favourite</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(1).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=2 ,category= ${cate.get(1).WG_Id})}">Mystery</a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(6).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=7 ,category= ${cate.get(6).WG_Id})}">Religion
+                                            & Inspiration</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(12).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=13 ,category= ${cate.get(12).WG_Id})}">Romance</a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(13).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=14 ,category= ${cate.get(13).WG_Id})}">Fiction/Fantasy</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="item item03">
+                                        <li class="title">Collections</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(2).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=3 ,category= ${cate.get(2).WG_Id})}">Science </a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(7).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=8 ,category= ${cate.get(7).WG_Id})}">Fiction/Fantasy</a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(14).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=15 ,category= ${cate.get(14).WG_Id})}">Self-Improvemen</a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(15).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=16 ,category= ${cate.get(15).WG_Id})}">Home
+                                            & Garden</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="drop"><a href="shopcategorie.html">Kids</a>
+                                <div class="megamenu mega02">
+                                    <ul class="item item02">
+                                        <li class="title">Top Collections</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(3).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=4 ,category= ${cate.get(3).WG_Id})}">American
+                                            Girl</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(8).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=9 ,category= ${cate.get(8).WG_Id})}">Diary
+                                            Wimpy Kid</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(16).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=17 ,category= ${cate.get(16).WG_Id})}">Finding
+                                            Dory</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(17).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=18 ,category= ${cate.get(17).WG_Id})}">Harry
+                                            Potter</a></li>
+                                    </ul>
+                                    <ul class="item item02">
+                                        <li class="title">More For Kids</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(4).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=5 ,category= ${cate.get(4).WG_Id})}">B&N
+                                            Educators</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(9).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=10 ,category= ${cate.get(9).WG_Id})}">B&N
+                                            Kids' Club</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(18).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=19 ,category= ${cate.get(18).WG_Id})}">Kids'
+                                            Music</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="blog.html">Blog</a>
+                            </li>
+                            <li class="drop with--one--item"><a>About</a>
+                                <div class="megamenu dropdown">
+                                    <ul class="item item01">
+                                        <li><a href="aboutus.html">About Us</a></li>
+                                        <li><a href="ourteam.html">Our Team</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+
+                        <li class="shop_search"><a class="search__active" href="#"></a></li><!--查找功能-->
+                        <li class="wishlist"><a href="wishlist.html"></a></li><!--心愿单界面入口-->
+                        <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">1</span></a>
+                            <!--这里修改红标显示的数量-->
+
+                            <!--购物车-->
+                            <!-- Start Shopping Cart -->
+                            <div class="block-minicart minicart__active">
+                                <div class="minicart-content-wrapper">
+                                    <div class="micart__close">
+                                        <span>close</span><!--关闭这个购物下拉栏-->
+                                    </div>
+                                    <div class="items-total d-flex justify-content-between">
+                                        <span>1 item</span>
+                                        <span>Cart Subtotal</span>
+                                    </div>
+                                    <div class="total_amount text-right">
+                                        <span>$66.00</span>
+                                    </div>
+                                    <div class="mini_action checkout">
+                                        <a class="checkout__btn" href="cart.html">Go to Checkout</a><!--结账界面入口-->
+                                    </div>
+                                    <div class="single__items"><!--以下在主界面的购物车下拉栏中只给一个示例-->
+                                        <div class="miniproduct">
+                                            <div class="item01 d-flex">
+                                                <div class="thumb">
+                                                    <a href="single-product.html"><img
+                                                            src="../static/images/product/sm-img/1.jpg"
+                                                            alt="product images"></a>
+                                                </div>
+                                                <div class="content">
+                                                    <h6><a href="single-product.html">Voyage Yoga Bag</a></h6>
+                                                    <span class="prize">$66.00</span>
+                                                    <div class="product_prize d-flex justify-content-between">
+                                                        <span class="qun">Qty: 01</span>
+                                                        <ul class="d-flex justify-content-end">
+                                                            <!--<li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>-->
+                                                            <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mini_action cart">
+                                                <a class="cart__btn" href="cart.html">View and edit cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- End Shopping Cart -->
+
+
+                        <!--我的账户-->
+                        <li class="setting__bar__icon"><a class="setting__active" href="#"></a><!--这里可以添加跳转到个人账户管理的界面-->
+                            <div class="searchbar__content setting__block">
+                                <div class="content-inner">
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>Currency</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <span class="currency-trigger">USD - US Dollar</span>
+                                                <ul class="switcher-dropdown">
+                                                    <li>GBP - British Pound Sterling</li>
+                                                    <li>EUR - Euro</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>Language</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <span class="currency-trigger">English</span>
+                                                <ul class="switcher-dropdown">
+                                                    <li>Deutsch</li>
+                                                    <li>Traditional Chinese</li>
+                                                    <li>Simplified Chinese</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>My Account</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <div class="setting__menu">
+                                                    <span><a href="my-account.html">My Account</a></span>
+                                                    <!--这里可以添加我的账户链接-->
+                                                    <span><a href="wishlist.html">My Wishlist</a></span><!--这里添加心愿单界面-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--此处删除了mobile Menu功能,直到搞清楚那个的作用-->
+        </div>
+    </header>
+    <!-- //Header -->
+
+    <!-- Start Search Popup -->
+    <div class="box-search-content search_active block-bg close__top">
+        <form id="search_mini_form" class="minisearch" action="#">
+            <div class="field__search">
+                <input type="text" placeholder="Search entire store here...">
+                <div class="action">
+                    <a href="#"><i class="zmdi zmdi-search"></i></a>
+                </div>
+            </div>
+        </form>
+        <div class="close__wrap">
+            <span>close</span>
+        </div>
+    </div>
+    <!-- End Search Popup -->
+    <!-- Start Bradcaump area -->
+    <div class="ht__bradcaump__area bg-image--4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Shop Single</h2>
+                        <nav class="bradcaump-content">
+                            <a class="breadcrumb_item" href="index.html">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb_item active">Shop Single</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Bradcaump area -->
+    <!-- Start main Content -->
+    <div class="maincontent bg--white pt--80 pb--55">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-12">
+                    <div class="wn__single__product">
+                        <div class="row">
+                            <div class="col-lg-6 col-12">
+
+                                <!--<a href="../static/images/product/3.jpg"><img src="#" th:alt="${books.get(0).url}"></a>-->
+                                <div class="wn__fotorama__wrapper">
+                                    <div class="fotorama wn__fotorama__action" data-nav="thumbs">
+                                        <a href="../static/images/product/3.jpg" th:href="@{/static/images/product/{num}.jpg(num=${books.get(0).url})}"><img th:src="@{/static/images/product/{num}.jpg(num=${books.get(0).url})}"  alt=""></a>
+                                        <a href="#" th:href="@{/static/images/product/{num}.jpg(num=${20+books.get(0).url})}"><img th:src="@{/static/images/product/{num}.jpg(num=${20+books.get(0).url})}" alt="" ></a>
+                                        <a href="../static/images/product/3.jpg"><img src="../static/images/product/3.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <div class="product__info__main">
+                                    <h1 th:text="${books.get(0).name}">Chaz Kangeroo Hoodie</h1>
+                                    <div class="product-info-stock-sku d-flex">
+                                        <p>Availability:<span> In stock</span></p>
+                                        <p>SKU:<span> <a th:text="'MH0'+${books.get(0).id}">MH01</a></span></p>
+                                    </div>
+                                    <div class="product-reviews-summary d-flex">
+                                        <ul class="rating-summary d-flex">
+                                            <li><i class="zmdi zmdi-star-outline"></i></li>
+                                            <li><i class="zmdi zmdi-star-outline"></i></li>
+                                            <li><i class="zmdi zmdi-star-outline"></i></li>
+                                            <li class="off"><i class="zmdi zmdi-star-outline"></i></li>
+                                            <li class="off"><i class="zmdi zmdi-star-outline"></i></li>
+                                        </ul>
+                                        <div class="reviews-actions d-flex">
+                                            <a href="#">(1 Review)</a>
+                                            <a href="#">Add Your Review</a>
+                                        </div>
+                                    </div>
+                                    <div class="price-box">
+                                        <span th:text="'$ '+${books.get(0).price}">$52.00</span>
+                                    </div>
+                                    <div class="box-tocart d-flex">
+                                        <span>Qty</span>
+                                        <input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number">
+                                        <div class="addtocart__actions">
+                                            <button class="tocart" type="submit" title="Add to Cart">Add to Cart</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="product__overview">
+                                        <p th:text="${books.get(0).info}">Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.</p>
+                                        <ul class="pro__attribute">
+                                            <li>• Two-tone gray heather hoodie.</li>
+                                            <li>• Drawstring-adjustable hood. </li>
+                                            <li>• Machine wash/dry.</li>
+                                            <li>      <br/>        </li>
+                                            <li>Author : <a th:text="${books.get(0).autor}"> Yixin Peng </a> </li>
+                                            <li>Total Sum :<a th:text="${books.get(0).sum}"> 99 </a></li>
+                                            <li>Verlag : <a th:text="${books.get(0).verlag}"> Emder Zeitung </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__info__detailed">
+                        <div class="pro_details_nav nav justify-content-start" role="tablist">
+                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-details" role="tab">Details</a>
+                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-review" role="tab">Reviews</a>
+                        </div>
+                        <div class="tab__container">
+                            <!-- Start Single Tab Content -->
+                            <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
+                                <div class="description__attribute">
+                                    <p th:text="${books.get(0).info}">Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.Ideal for cold-weather training or work outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat.</p>
+                                    <ul>
+                                        <li>• Two-tone gray heather hoodie.</li>
+                                        <li>• Drawstring-adjustable hood. </li>
+                                        <li>• Machine wash/dry.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- End Single Tab Content -->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-12 md-mt-40 sm-mt-40">
+                    <div class="shop__sidebar">
+                        <aside class="wedget__categories sidebar--banner">
+                            <img src="../static/images/others/banner_left.jpg" alt="banner images">
+                            <div class="text">
+                                <h2>new products</h2>
+                                <h6>save up to <br> <strong>30%</strong>off</h6>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End main Content -->
+    <!-- Start Search Popup -->
+    <div class="box-search-content search_active block-bg close__top">
+        <form id="search_mini_form--2" class="minisearch" action="#">
+            <div class="field__search">
+                <input type="text" placeholder="Search entire store here...">
+                <div class="action">
+                    <a href="#"><i class="zmdi zmdi-search"></i></a>
+                </div>
+            </div>
+        </form>
+        <div class="close__wrap">
+            <span>close</span>
+        </div>
+    </div>
+    <!-- End Search Popup -->
+    <!-- Footer Area -->
+    <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+        <!-- <section style="height: 450px; background-image: url(images/footerPic.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" >-->
+        <div class="footer-static-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__widget footer__menu">
+                            <div class="ft__logo">
+                                <a href="index.html">
+                                    <img src="../static/images/logo.png" th:src="@{/static/images/logo.png}" alt="logo" height="60" width="140">
+                                </a>
+                                <p>Thanks for your viewing!</p>
+                            </div>
+                            <div class="footer__content">
+                                <ul class="social__net social__net--2 d-flex justify-content-center">
+                                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-google"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                </ul>
+                                <ul class="mainmenu d-flex justify-content-center">
+                                    <li><a href="shopcategorie.html">All Product</a></li>
+                                    <li><a href="#">Wishlist</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright__wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="copyright">
+                            <div class="copy__right__inner text-left">
+                                <p>Copyright <i class="fa fa-copyright"></i> <a>Uncle K.</a> All Rights Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="payment text-right">
+                            <img src="../static/images/icons/payment.png" th:src="@{/static/images/icons/payment.png}" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--</section>-->
+    </footer>
+    <!-- //Footer Area -->
+</div>
+<!-- //Main wrapper -->
+
+
+
+<!-- JS Files -->
+<script type="text/javascript" src="../static/js/vendor/jquery-3.2.1.min.js" th:src="@{/static/js/vendor/jquery-3.2.1.min.js}"></script>
+<script type="text/javascript" src="../static/js/popper.min.js" th:src="@{/static/js/popper.min.js}"></script>
+<script type="text/javascript" src="../static/js/bootstrap.min.js" th:src="@{/static/js/bootstrap.min.js}"></script>
+<script type="text/javascript" src="../static/js/plugins.js" th:src="@{/static/js/plugins.js}"></script>
+<script type="text/javascript" src="../static/js/active.js" th:src="@{/static/js/active.js}"></script>
+
+</body>
+</html>

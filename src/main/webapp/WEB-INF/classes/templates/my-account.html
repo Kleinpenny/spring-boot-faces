@@ -1,0 +1,404 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Shop-List | Bookshop </title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="../static/images/favicon.ico" th:href="@{/static/images/favicon.ico}">
+	<link rel="apple-touch-icon" href="../static/images/icon.png" th:href="@{/static/images/icon.png}">
+
+	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"
+		  th:href="@{'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'}">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800"
+		  rel="stylesheet"
+		  th:href="@{'https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800'}">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"
+		  th:href="@{'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'}">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" media="all" href="../static/css/bootstrap.min.css"
+		  th:href="@{/static/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" media="all" href="../static/css/plugins.css"
+		  th:href="@{/static/css/plugins.css}">
+	<link rel="stylesheet" type="text/css" media="all" href="../static/style.css" th:href="@{/static/style.css}">
+
+	<!-- Modernizer js -->
+	<script type="text/javascript" src="../static/js/vendor/modernizr-3.5.0.min.js"
+			th:src="@{/static/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+<body>
+<!-- Main wrapper -->
+<div class="wrapper" id="wrapper">
+
+	<!-- Header -->
+	<header id="wn__header" class="header__area header__absolute sticky__header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-6 col-lg-2">
+					<div class="logo">
+						<a href="index.html">
+							<img src="../static/images/logo.png" alt="logo images"><!--网页的图标 -->
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-8 d-none d-lg-block">
+					<nav class="mainmenu__nav">
+						<ul class="meninmenu d-flex justify-content-start">
+							<li><a href="index.html">Home</a>
+							</li>
+							<li class="drop"><a href="shopcategorie.html">Books</a>
+								<div class="megamenu mega03">
+									<ul class="item item03">
+										<li class="title">Categories</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(0).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=1 ,category= ${cate.get(0).WG_Id} )}">Biography</p></a>
+										</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(5).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=6 ,category= ${cate.get(5).WG_Id})}">Business</p> </a>
+										</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(10).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=11 ,category= ${cate.get(10).WG_Id})}">Cookbooks </a>
+										</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(11).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=12 ,category= ${cate.get(11).WG_Id})}">Health
+											& Fitness </a></li>
+									</ul>
+									<ul class="item item03">
+										<li class="title">Customer Favourite</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(1).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=2 ,category= ${cate.get(1).WG_Id})}">Mystery</a>
+										</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(6).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=7 ,category= ${cate.get(6).WG_Id})}">Religion
+											& Inspiration</a></li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(12).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=13 ,category= ${cate.get(12).WG_Id})}">Romance</a>
+										</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(13).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=14 ,category= ${cate.get(13).WG_Id})}">Fiction/Fantasy</a>
+										</li>
+									</ul>
+									<ul class="item item03">
+										<li class="title">Collections</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(2).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=3 ,category= ${cate.get(2).WG_Id})}">Science </a>
+										</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(7).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=8 ,category= ${cate.get(7).WG_Id})}">Fiction/Fantasy</a>
+										</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(14).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=15 ,category= ${cate.get(14).WG_Id})}">Self-Improvemen</a>
+										</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(15).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=16 ,category= ${cate.get(15).WG_Id})}">Home
+											& Garden</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="drop"><a href="shopcategorie.html">Kids</a>
+								<div class="megamenu mega02">
+									<ul class="item item02">
+										<li class="title">Top Collections</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(3).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=4 ,category= ${cate.get(3).WG_Id})}">American
+											Girl</a></li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(8).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=9 ,category= ${cate.get(8).WG_Id})}">Diary
+											Wimpy Kid</a></li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(16).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=17 ,category= ${cate.get(16).WG_Id})}">Finding
+											Dory</a></li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(17).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=18 ,category= ${cate.get(17).WG_Id})}">Harry
+											Potter</a></li>
+									</ul>
+									<ul class="item item02">
+										<li class="title">More For Kids</li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(4).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=5 ,category= ${cate.get(4).WG_Id})}">B&N
+											Educators</a></li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(9).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=10 ,category= ${cate.get(9).WG_Id})}">B&N
+											Kids' Club</a></li>
+										<li><a href="shopcategorie.html" th:text="${cate.get(18).WG_Name}"
+											   th:href="@{/shopcategorie.html(choice=19 ,category= ${cate.get(18).WG_Id})}">Kids'
+											Music</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="blog.html">Blog</a>
+							</li>
+							<li class="drop with--one--item"><a>About</a>
+								<div class="megamenu dropdown">
+									<ul class="item item01">
+										<li><a href="aboutus.html">About Us</a></li>
+										<li><a href="ourteam.html">Our Team</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="contact.html">Contact</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+
+				<div class="col-md-6 col-sm-6 col-6 col-lg-2">
+					<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+
+						<li class="shop_search"><a class="search__active" href="#"></a></li><!--查找功能-->
+						<li class="wishlist"><a href="wishlist.html"></a></li><!--心愿单界面入口-->
+						<li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">1</span></a>
+							<!--这里修改红标显示的数量-->
+
+							<!--购物车-->
+							<!-- Start Shopping Cart -->
+							<div class="block-minicart minicart__active">
+								<div class="minicart-content-wrapper">
+									<div class="micart__close">
+										<span>close</span><!--关闭这个购物下拉栏-->
+									</div>
+									<div class="items-total d-flex justify-content-between">
+										<span>1 item</span>
+										<span>Cart Subtotal</span>
+									</div>
+									<div class="total_amount text-right">
+										<span>$66.00</span>
+									</div>
+									<div class="mini_action checkout">
+										<a class="checkout__btn" href="cart.html">Go to Checkout</a><!--结账界面入口-->
+									</div>
+									<div class="single__items"><!--以下在主界面的购物车下拉栏中只给一个示例-->
+										<div class="miniproduct">
+											<div class="item01 d-flex">
+												<div class="thumb">
+													<a href="single-product.html"><img
+															src="../static/images/product/sm-img/1.jpg"
+															alt="product images"></a>
+												</div>
+												<div class="content">
+													<h6><a href="single-product.html">Voyage Yoga Bag</a></h6>
+													<span class="prize">$66.00</span>
+													<div class="product_prize d-flex justify-content-between">
+														<span class="qun">Qty: 01</span>
+														<ul class="d-flex justify-content-end">
+															<!--<li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>-->
+															<li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="mini_action cart">
+												<a class="cart__btn" href="cart.html">View and edit cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- End Shopping Cart -->
+
+
+						<!--我的账户-->
+						<li class="setting__bar__icon"><a class="setting__active" href="#"></a><!--这里可以添加跳转到个人账户管理的界面-->
+							<div class="searchbar__content setting__block">
+								<div class="content-inner">
+									<div class="switcher-currency">
+										<strong class="label switcher-label">
+											<span>Currency</span>
+										</strong>
+										<div class="switcher-options">
+											<div class="switcher-currency-trigger">
+												<span class="currency-trigger">USD - US Dollar</span>
+												<ul class="switcher-dropdown">
+													<li>GBP - British Pound Sterling</li>
+													<li>EUR - Euro</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="switcher-currency">
+										<strong class="label switcher-label">
+											<span>Language</span>
+										</strong>
+										<div class="switcher-options">
+											<div class="switcher-currency-trigger">
+												<span class="currency-trigger">English</span>
+												<ul class="switcher-dropdown">
+													<li>Deutsch</li>
+													<li>Traditional Chinese</li>
+													<li>Simplified Chinese</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="switcher-currency">
+										<strong class="label switcher-label">
+											<span>My Account</span>
+										</strong>
+										<div class="switcher-options">
+											<div class="switcher-currency-trigger">
+												<div class="setting__menu">
+													<span><a href="my-account.html">My Account</a></span>
+													<!--这里可以添加我的账户链接-->
+													<span><a href="wishlist.html">My Wishlist</a></span><!--这里添加心愿单界面-->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--此处删除了mobile Menu功能,直到搞清楚那个的作用-->
+		</div>
+	</header>
+	<!-- //Header -->
+
+	<!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area bg-image--1 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+						<div class="bradcaump__inner text-center">
+							<h2 >MyAccount</h2>
+
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>/
+        <!-- End Bradcaump area -->
+		<!-- Start My Account Area -->
+		<section class="my_account_area pt--80 pb--55 bg--white">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-12">
+						<div class="my__account__wrapper">
+							<h3 class="account__title">Login</h3>
+							<form action="#">
+								<div class="account__form">
+									<div class="input__box">
+										<label>Username or email address <span>*</span></label>
+										<input type="text">
+									</div>
+									<div class="input__box">
+										<label>Password<span>*</span></label>
+										<input type="text">
+									</div>
+									<div class="form__btn">
+										<a  href="my-account-login.html"><input name="login" type="button" id="btn1" title="login" value="login" />
+										</a>
+										<label class="label-for-checkbox">
+											<input id="rememberme" class="input-checkbox" name="rememberme" value="forever" type="checkbox">
+											<span>Remember me</span>
+										</label>
+									</div>
+									<a class="forget_pass" href="#">Lost your password?</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12">
+						<div class="my__account__wrapper">
+							<h3 class="account__title">Register</h3>
+							<form action="#">
+								<div class="account__form">
+									<div class="input__box">
+										<label>Email address <span>*</span></label>
+										<input type="email">
+									</div>
+									<div class="input__box">
+										<label>Password<span>*</span></label>
+										<input type="password">
+									</div>
+									<div class="form__btn">
+										<a  href="#"><input name="register" type="button" id="btn2" title="register" value="register" />
+										</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End My Account Area -->
+		<!-- Footer Area -->
+		<footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+			<!-- <section style="height: 450px; background-image: url(images/footerPic.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" >-->
+			<div class="footer-static-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="footer__widget footer__menu">
+								<div class="ft__logo">
+									<a href="Test.html">
+										<img src="images/logo.png" alt="logo" height="60" width="140">
+									</a>
+									<p>Thanks for your viewing!</p>
+								</div>
+								<div class="footer__content">
+									<ul class="social__net social__net--2 d-flex justify-content-center">
+										<li><a href="#"><i class="bi bi-facebook"></i></a></li>
+										<li><a href="#"><i class="bi bi-google"></i></a></li>
+										<li><a href="#"><i class="bi bi-twitter"></i></a></li>
+										<li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+										<li><a href="#"><i class="bi bi-youtube"></i></a></li>
+									</ul>
+									<ul class="mainmenu d-flex justify-content-center">
+										<li><a href="shopcategorie.html">All Product</a></li>
+										<li><a href="#">Wishlist</a></li>
+										<li><a href="#">Blog</a></li>
+										<li><a href="#">About Us</a></li>
+										<li><a href="#">Contact</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="copyright__wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="copyright">
+								<div class="copy__right__inner text-left">
+									<p>Copyright <i class="fa fa-copyright"></i> <a>Uncle K.</a> All Rights Reserved</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12">
+							<div class="payment text-right">
+								<img src="images/icons/payment.png" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--</section>-->
+		</footer>
+		<!-- //Footer Area -->
+		
+	</div>
+	<!-- //Main wrapper -->
+
+	<!-- JS Files -->
+	<script src="js/vendor/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/active.js"></script>
+	
+</body>
+</html>

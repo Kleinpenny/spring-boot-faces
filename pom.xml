@@ -8,6 +8,13 @@
 	<artifactId>spring-boot-faces</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+	<properties>
+		<!--添加下面两项指定thymeleaf的版本-->
+		<thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
+		<thymeleaf-layout-dialect.version>2.0.5</thymeleaf-layout-dialect.version>
+	</properties>
+
+
 	<!-- Inherit defaults from Spring Boot -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -30,6 +37,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 
 		<!-- JSF dependencies -->
 		<dependency>
@@ -50,6 +61,7 @@
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.myfaces.core</groupId>
@@ -77,18 +89,14 @@
 			<version>1.16.16</version>
 		</dependency>
 
+		<!--这是Springboot和Mybatis的整合版本，不应该使用Spring+Mybatis版本-->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.0</version>
+		</dependency>
 
-		<!-- Database dependencies -->
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>2.3.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-			<version>4.1.2</version>
-		</dependency>
+
 	</dependencies>
 
 	<!-- Package as an executable jar -->

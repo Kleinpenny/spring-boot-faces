@@ -1,5 +1,6 @@
 package com.auth0.samples.bootfaces;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.ocpsoft.rewrite.servlet.RewriteFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

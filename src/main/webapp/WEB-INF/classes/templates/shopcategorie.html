@@ -1,0 +1,763 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shop-List | Bookshop </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../static/images/favicon.ico" th:href="@{/static/images/favicon.ico}">
+    <link rel="apple-touch-icon" href="../static/images/icon.png" th:href="@{/static/images/icon.png}">
+
+    <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"
+          th:href="@{'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800"
+          rel="stylesheet"
+          th:href="@{'https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800'}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"
+          th:href="@{'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/bootstrap.min.css"
+          th:href="@{/static/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/plugins.css"
+          th:href="@{/static/css/plugins.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="../static/style.css" th:href="@{/static/style.css}">
+
+    <!-- Modernizer js -->
+    <script type="text/javascript" src="../static/js/vendor/modernizr-3.5.0.min.js"
+            th:src="@{/static/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+<body>
+<!-- Main wrapper -->
+<div class="wrapper" id="wrapper">
+
+    <!-- Header -->
+    <header id="wn__header" class="header__area header__absolute sticky__header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="../static/images/logo.png" alt="logo images"><!--网页的图标 -->
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-none d-lg-block">
+                    <nav class="mainmenu__nav">
+                        <ul class="meninmenu d-flex justify-content-start">
+                            <li><a href="index.html">Home</a>
+                            </li>
+                            <li class="drop"><a href="shopcategorie.html">Books</a>
+                                <div class="megamenu mega03">
+                                    <ul class="item item03">
+                                        <li class="title">Categories</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(0).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=1 ,category= ${cate.get(0).WG_Id} )}">Biography</p></a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(5).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=6 ,category= ${cate.get(5).WG_Id})}">Business</p> </a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(10).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=11 ,category= ${cate.get(10).WG_Id})}">Cookbooks </a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(11).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=12 ,category= ${cate.get(11).WG_Id})}">Health
+                                            & Fitness </a></li>
+                                    </ul>
+                                    <ul class="item item03">
+                                        <li class="title">Customer Favourite</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(1).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=2 ,category= ${cate.get(1).WG_Id})}">Mystery</a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(6).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=7 ,category= ${cate.get(6).WG_Id})}">Religion
+                                            & Inspiration</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(12).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=13 ,category= ${cate.get(12).WG_Id})}">Romance</a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(13).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=14 ,category= ${cate.get(13).WG_Id})}">Fiction/Fantasy</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="item item03">
+                                        <li class="title">Collections</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(2).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=3 ,category= ${cate.get(2).WG_Id})}">Science </a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(7).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=8 ,category= ${cate.get(7).WG_Id})}">Fiction/Fantasy</a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(14).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=15 ,category= ${cate.get(14).WG_Id})}">Self-Improvemen</a>
+                                        </li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(15).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=16 ,category= ${cate.get(15).WG_Id})}">Home
+                                            & Garden</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="drop"><a href="shopcategorie.html">Kids</a>
+                                <div class="megamenu mega02">
+                                    <ul class="item item02">
+                                        <li class="title">Top Collections</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(3).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=4 ,category= ${cate.get(3).WG_Id})}">American
+                                            Girl</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(8).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=9 ,category= ${cate.get(8).WG_Id})}">Diary
+                                            Wimpy Kid</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(16).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=17 ,category= ${cate.get(16).WG_Id})}">Finding
+                                            Dory</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(17).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=18 ,category= ${cate.get(17).WG_Id})}">Harry
+                                            Potter</a></li>
+                                    </ul>
+                                    <ul class="item item02">
+                                        <li class="title">More For Kids</li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(4).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=5 ,category= ${cate.get(4).WG_Id})}">B&N
+                                            Educators</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(9).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=10 ,category= ${cate.get(9).WG_Id})}">B&N
+                                            Kids' Club</a></li>
+                                        <li><a href="shopcategorie.html" th:text="${cate.get(18).WG_Name}"
+                                               th:href="@{/shopcategorie.html(choice=19 ,category= ${cate.get(18).WG_Id})}">Kids'
+                                            Music</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="blog.html">Blog</a>
+                            </li>
+                            <li class="drop with--one--item"><a href="#">About</a>
+                                <div class="megamenu dropdown">
+                                    <ul class="item item01">
+                                        <li><a href="aboutus.html">About Us</a></li>
+                                        <li><a href="ourteam.html">Our Team</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+
+                        <li class="shop_search"><a class="search__active" href="#"></a></li><!--查找功能-->
+                        <li class="wishlist"><a href="wishlist.html"></a></li><!--心愿单界面入口-->
+                        <li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">1</span></a>
+                            <!--这里修改红标显示的数量-->
+
+                            <!--购物车-->
+                            <!-- Start Shopping Cart -->
+                            <div class="block-minicart minicart__active">
+                                <div class="minicart-content-wrapper">
+                                    <div class="micart__close">
+                                        <span>close</span><!--关闭这个购物下拉栏-->
+                                    </div>
+                                    <div class="items-total d-flex justify-content-between">
+                                        <span>1 item</span>
+                                        <span>Cart Subtotal</span>
+                                    </div>
+                                    <div class="total_amount text-right">
+                                        <span>$66.00</span>
+                                    </div>
+                                    <div class="mini_action checkout">
+                                        <a class="checkout__btn" href="cart.html">Go to Checkout</a><!--结账界面入口-->
+                                    </div>
+                                    <div class="single__items"><!--以下在主界面的购物车下拉栏中只给一个示例-->
+                                        <div class="miniproduct">
+                                            <div class="item01 d-flex">
+                                                <div class="thumb">
+                                                    <a href="single-product.html"><img
+                                                            src="../static/images/product/sm-img/1.jpg"
+                                                            alt="product images"></a>
+                                                </div>
+                                                <div class="content">
+                                                    <h6><a href="single-product.html">Voyage Yoga Bag</a></h6>
+                                                    <span class="prize">$66.00</span>
+                                                    <div class="product_prize d-flex justify-content-between">
+                                                        <span class="qun">Qty: 01</span>
+                                                        <ul class="d-flex justify-content-end">
+                                                            <!--<li><a href="#"><i class="zmdi zmdi-settings"></i></a></li>-->
+                                                            <li><a href="#"><i class="zmdi zmdi-delete"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mini_action cart">
+                                                <a class="cart__btn" href="cart.html">View and edit cart</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- End Shopping Cart -->
+
+
+                        <!--我的账户-->
+                        <li class="setting__bar__icon"><a class="setting__active" href="#"></a><!--这里可以添加跳转到个人账户管理的界面-->
+                            <div class="searchbar__content setting__block">
+                                <div class="content-inner">
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>Currency</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <span class="currency-trigger">USD - US Dollar</span>
+                                                <ul class="switcher-dropdown">
+                                                    <li>GBP - British Pound Sterling</li>
+                                                    <li>EUR - Euro</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>Language</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <span class="currency-trigger">English</span>
+                                                <ul class="switcher-dropdown">
+                                                    <li>Deutsch</li>
+                                                    <li>Traditional Chinese</li>
+                                                    <li>Simplified Chinese</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="switcher-currency">
+                                        <strong class="label switcher-label">
+                                            <span>My Account</span>
+                                        </strong>
+                                        <div class="switcher-options">
+                                            <div class="switcher-currency-trigger">
+                                                <div class="setting__menu">
+                                                    <span><a href="my-account.html">My Account</a></span>
+                                                    <!--这里可以添加我的账户链接-->
+                                                    <span><a href="wishlist.html">My Wishlist</a></span><!--这里添加心愿单界面-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--此处删除了mobile Menu功能,直到搞清楚那个的作用-->
+        </div>
+    </header>
+    <!-- //Header -->
+
+    <!-- Start Search Popup --><!--显示搜索框的外观和搜索功能-->
+    <div class="brown--color box-search-content search_active block-bg close__top">
+        <form id="search_mini_form" class="minisearch" action="#">
+            <div class="field__search">
+                <input type="text" placeholder="Search entire store here..."/>
+                <div class="action">
+                    <a href="#"><i class="zmdi zmdi-search"></i></a>
+                </div>
+            </div>
+        </form>
+        <div class="close__wrap">
+            <span>close</span>
+        </div>
+    </div>
+    <!-- End Search Popup -->
+    <!-- Start Bradcaump area -->
+    <div class="ht__bradcaump__area bg-image--5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Shop List</h2>
+                        <nav class="bradcaump-content">
+                            <a class="breadcrumb_item" href="index.html">Home</a>
+                            <span class="brd-separetor">/</span>
+                            <span class="breadcrumb_item active">Shop List</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Bradcaump area -->
+    <!-- Start Shop Page -->
+    <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
+                    <div class="shop__sidebar">
+                        <aside class="wedget__categories poroduct--cat">
+                            <h3 class="wedget__title">Product Categories</h3>
+                            <ul>
+                                <!--如果用th:if... th:unless,就会产生显示不出的结果   href="#" th:if="${cate.get(6).WG_Name != null}" ><p -->
+                                <li id="cate1"><a href="#" th:text="${cate.get(0).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=1 ,category= ${cate.get(0).WG_Id})}">Biography<span>(3)</span></a>
+                                </li>
+                                <li id="cate2"><a href="#" th:text="${cate.get(3).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=4 ,category= ${cate.get(3).WG_Id})}">Business
+                                    <span>(4)</span></a></li>
+                                <li id="cate3"><a href="#" th:text="${cate.get(7).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=8 ,category= ${cate.get(7).WG_Id})}">Cookbooks
+                                    <span>(6)</span></a></li>
+                                <li id="cate4"><a href="#" th:text="${cate.get(2).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=3 ,category= ${cate.get(2).WG_Id})}">Health
+                                    & Fitness <span>(7)</span></a>
+                                <li id="cate5"><a href="#" th:text="${cate.get(6).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=7 ,category= ${cate.get(6).WG_Id})}">History
+                                    <span>(8)</span></a></li>
+                                <li id="cate6"><a href="#" th:text="${cate.get(1).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=2 ,category= ${cate.get(1).WG_Id})}">Mystery
+                                    <span>(9)</span></a></li>
+                                <li id="cate7"><a href="#" th:text="${cate.get(8).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=9 ,category= ${cate.get(8).WG_Id})}">Inspiration
+                                    <span>(13)</span></a></li>
+                                <li id="cate8"><a href="#" th:text="${cate.get(11).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=12 ,category= ${cate.get(11).WG_Id})}">Romance
+                                    <span>(20)</span></a></li>
+                                <li id="cate9"><a href="#" th:text="${cate.get(4).WG_Name}"
+                                                  th:href="@{/shopcategorie.html(choice=5 ,category= ${cate.get(4).WG_Id})}">Fiction/Fantasy
+                                    <span>(22)</span></a></li>
+                                <li id="cate10"><a href="#" th:text="${cate.get(10).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=11 ,category= ${cate.get(10).WG_Id})}">Self-Improvement
+                                    <span>(13)</span></a></li>
+                                <li id="cate11"><a href="#" th:text="${cate.get(5).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=6 ,category= ${cate.get(5).WG_Id})}">Humor
+                                    Books <span>(17)</span></a></li>
+                                <li id="cate12"><a href="#" th:text="${cate.get(9).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=10 ,category= ${cate.get(9).WG_Id})}">Harry
+                                    Potter <span>(20)</span></a></li>
+                            </ul>
+                        </aside>
+                        <aside class="wedget__categories pro--range">
+                            <h3 class="wedget__title">Filter by price</h3>
+                            <div class="content-shopby">
+                                <div class="price_filter s-filter clear">
+                                    <form action="#" method="GET">
+                                        <div id="slider-range"></div>
+                                        <div class="slider__range--output">
+                                            <div class="price__output--wrap">
+                                                <div class="price--output">
+                                                    <span>Price :</span><input type="text" id="amount" readonly="">
+                                                </div>
+                                                <div class="price--filter">
+                                                    <a href="#">Filter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside class="wedget__categories poroduct--compare">
+                            <h3 class="wedget__title">Compare</h3>
+                            <ul>
+                                <li><a href="#">x</a><a href="#">Condimentum posuere</a></li>
+                                <li><a href="#">x</a><a href="#">Condimentum posuere</a></li>
+                                <li><a href="#">x</a><a href="#">Dignissim venenatis</a></li>
+                            </ul>
+                        </aside>
+                        <aside class="wedget__categories poroduct--tag">
+                            <h3 class="wedget__title">Product Tags</h3>
+                            <ul>
+                                <li id="cates1"><a href="#" th:text="${cate.get(0).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=1 ,category= ${cate.get(0).WG_Id})}">Biography</a>
+                                </li>
+                                <li id="cates2"><a href="#" th:text="${cate.get(1).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=2 ,category= ${cate.get(1).WG_Id})}">Business</a>
+                                </li>
+                                <li id="cates3"><a href="#" th:text="${cate.get(2).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=3 ,category= ${cate.get(2).WG_Id})}">Cookbooks</a>
+                                </li>
+                                <li id="cates4"><a href="#" th:text="${cate.get(3).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=4 ,category= ${cate.get(3).WG_Id})}">Health
+                                    & Fitness</a></li>
+                                <li id="cates5"><a href="#" th:text="${cate.get(4).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=5 ,category= ${cate.get(4).WG_Id})}">History</a>
+                                </li>
+                                <li id="cates6"><a href="#" th:text="${cate.get(5).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=6 ,category= ${cate.get(5).WG_Id})}">Mystery</a>
+                                </li>
+                                <li id="cates7"><a href="#" th:text="${cate.get(6).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=7 ,category= ${cate.get(6).WG_Id})}">Inspiration</a>
+                                </li>
+                                <li id="cates8"><a href="#" th:text="${cate.get(7).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=8 ,category= ${cate.get(7).WG_Id})}">Religion</a>
+                                </li>
+                                <li id="cates9"><a href="#" th:text="${cate.get(8).WG_Name}"
+                                                   th:href="@{/shopcategorie.html(choice=9 ,category= ${cate.get(8).WG_Id})}">Fiction</a>
+                                </li>
+                                <li id="cates10"><a href="#" th:text="${cate.get(10).WG_Name}"
+                                                    th:href="@{/shopcategorie.html(choice=10 ,category= ${cate.get(10).WG_Id})}">Fantasy</a>
+                                </li>
+                                <li id="cates11"><a href="#" th:text="${cate.get(11).WG_Name}"
+                                                    th:href="@{/shopcategorie.html(choice=11 ,category= ${cate.get(11).WG_Id})}">Music</a>
+                                </li>
+                                <li id="cates12"><a href="#" th:text="${cate.get(12).WG_Name}"
+                                                    th:href="@{/shopcategorie.html(choice=12 ,category= ${cate.get(12).WG_Id})}">Toys</a>
+                                </li>
+                                <li id="cates13"><a href="#" th:text="${cate.get(13).WG_Name}"
+                                                    th:href="@{/shopcategorie.html(choice=13 ,category= ${cate.get(13).WG_Id})}">Hoodies</a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="wedget__categories sidebar--banner">
+                            <img src="../static/images/others/banner_left.jpg" alt="banner images">
+                            <div class="text">
+                                <h2>new products</h2>
+                                <h6>save up to <br> <strong>30%</strong>off</h6>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-12 order-1 order-lg-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
+                                <div class="shop__list nav justify-content-center" role="tablist"><!--改变展示方法-->
+                                    <a class="nav-item nav-link" data-toggle="tab" href="#nav-grid"
+                                       th:href="@{#nav-grid}" role="tab"><i class="fa fa-th"></i></a>
+                                    <a class="nav-item nav-link active" data-toggle="tab" href="#nav-list" role="tab"><i
+                                            class="fa fa-list"></i></a>
+                                </div>
+                                <!--<th:block th:if="${relation != 0}" >
+                                    <th:block th:if="${relation > 12}">
+                                    <p style="display : none" th:text="'Showing 1–5 of '+${relation}+' results'">Showing 1–12 of 40 results</p>
+                                    </th:block>
+                                    <th:block th:unless="${relation > 12}">
+                                        <p  style="display : none" th:text="'Showing 1–'+${relation}+' of '+${relation}+' results'">Showing 1–12 of 40 results</p>
+                                    </th:block>
+                                </th:block>
+                                <th:block th:unless="${relation != 0}">
+                                    <p th:text="'Showing '+ ${relation} +' of '+${relation}+' result'">Showing 1–12 of 40 results</p>
+                                </th:block>-->
+                                <p th:text="'Showing '+ ${relation} +' results'">Showing 1–12 of 40 results</p>
+
+
+                                <div class="orderby__wrapper">
+                                    <span>Sort By</span>
+                                    <select class="shot__byselect">
+                                        <option>Default sorting</option>
+                                        <option>HeadPhone</option>
+                                        <option>Furniture</option>
+                                        <option>Jewellery</option>
+                                        <option>Handmade</option>
+                                        <option>Kids</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab__container">
+                            <div class="shop-grid tab-pane fade" id="nav-grid" role="tabpanel">
+                                <div class="row">
+
+                                    <!-- Start Single Product -->
+
+                                    <div id=${booknum.name} class="col-lg-4 col-md-4 col-sm-6 col-12"  th:each="booknum:${allcatebooks}">
+                                        <div class="product">
+                                            <div class="product__thumb">
+                                                <a class="first__img" href="single-product.html"
+                                                   th:href="@{/single-product.html(book = ${booknum.id})}"><img
+                                                        src="../static/images/product/1.jpg" alt="product image" th:src="@{/static/images/product/{num}.jpg(num=${booknum.url})}" height="355" width="455" /></a>
+                                                <!--<a class="second__img animation1" href="single-product.html"
+                                                   th:href="@{/single-product.html(book = ${booknum.id})}"><img
+                                                        src="../static/images/product/2.jpg" alt="product image"></a>-->
+                                                <div class="new__box">
+                                                    <span class="new-label">Hot</span>
+                                                </div>
+                                                <ul class="prize position__right__bottom d-flex">
+
+                                                    <li th:text="'$'+${booknum.price}">$40.00</li>
+                                                    <li class="old_prize">$55.00</li>
+                                                </ul>
+                                                <div class="action">
+                                                    <div class="actions_inner">
+                                                        <ul class="add_to_links">
+                                                            <li><a class="cart" href="cart.html"></a></li>
+                                                            <li><a class="wishlist" href="wishlist.html"></a></li>
+                                                            <li><a class="compare" href="compare.html"></a></li>
+                                                            <li><a data-toggle="modal" title="Quick View"
+                                                                   class="quickview modal-view detail-link"
+                                                                   href="#productmodal"></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product__content">
+                                                <h4><a href="single-product.html" th:text="${booknum.name}"
+                                                       th:href="@{/single-product.html(book = ${booknum.id})}">Strive
+                                                    Shoulder Pack</a></h4>
+                                                <ul class="rating d-flex">
+                                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                                    <li class="on"><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                    <li><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- End Single Product -->
+
+                                </div>
+                                <!-- <ul class="wn__pagination">
+                                     <li id="page1" class="active"><a href="#">1</a></li>
+                                     <li id="page2"><a href="#">2</a></li>
+                                     <li id="page3"><a href="#">3</a></li>
+                                     <li id="page4"><a href="#">4</a></li>
+                                     <li id="page5"><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
+                                 </ul>-->
+                            </div>
+                            <div class="shop-grid tab-pane fade show active" id="nav-list" role="tabpanel" >
+                                <div class="list__view__wrapper">
+                                    <!-- Start Single Product -->
+
+                                    <div id==${booknum.id} class="list__view" th:each="bk:${books}">
+                                        <div class="thumb">
+                                            <a class="first__img" href="single-product.html"
+                                               th:href="@{/single-product.html(book = ${books.get(book+bkStat.index).id})}"><img
+                                                    src="../static/images/product/25.jpg" alt="product images" th:src="@{/static/images/product/{num}.jpg(num=${books.get(book+bkStat.index).url})}" height="355" width="555"></a>
+                                            <a class="second__img animation1" href="single-product.html"
+                                               th:href="@{/single-product.html(book = ${books.get(book+bkStat.index).id})}"><img
+                                                    src="../static/images/product/25.jpg" alt="product images" th:alt="${20+books.get(book+bkStat.index).url}"  th:src="@{/static/images/product/{num}.jpg(num=${20+books.get(book+bkStat.index).url})}" height="355" width="555"></a>
+                                        </div>
+                                        <div class="content">
+                                            <h2><a href="single-product.html" th:text="${books.get(book+bkStat.index).name}"
+                                                   th:href="@{/single-product.html(book = ${books.get(book+bkStat.index).id})}">adipiscing</a>
+                                            </h2>
+                                            <ul class="rating d-flex">
+                                                <li class="on"><i class="fa fa-star-o"></i></li>
+                                                <li class="on"><i class="fa fa-star-o"></i></li>
+                                                <li class="on"><i class="fa fa-star-o"></i></li>
+                                                <li class="on"><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                            <ul class="prize__box">
+                                                <li th:text="'$'+${books.get(book+bkStat.index).price}">$111.00</li>
+                                                <li class="old__prize">$220.00</li>
+                                            </ul>
+                                            <p th:text="${books.get(book+bkStat.index).info}">Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non
+                                                est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida
+                                                semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id
+                                                nulla.</p>
+                                            <ul class="cart__action d-flex">
+                                                <li class="cart"><a href="cart.html">Add to cart</a></li>
+                                                <li class="wishlist"><a href="cart.html"></a></li>
+                                                <li class="compare"><a href="cart.html"></a></li>
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+                                    <!-- End Single Product -->
+
+                                </div>
+                                <ul class="wn__pagination">
+                                    <li id="pages1">
+                                        <th:block th:if="${category==0}">
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = 1,book = 0,choice=0)}">1</a>
+                                        </th:block>
+                                        <th:block th:if="${category!=0}"><!--分有无要查找的类别，有为非零-->
+                                            <a href="#" th:href="@{/shopcategorie.html(pages = 1,book = 0,choice=1,category=${category})}">1</a>
+                                        </th:block>
+                                    </li>
+                                    <li id="pages2">
+                                        <th:block th:if="${category==0}">
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = 2,book = 0,choice=0)}">2</a>
+                                        </th:block>
+
+                                        <th:block th:if="${category!=0}"><!--分有无要查找的类别，有为非零-->
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = 2,book = 0,choice=1,category=${category})}">2</a>
+                                        </th:block>
+
+                                    </li>
+                                    <li id="pages3">
+                                        <th:block th:if="${category==0}">
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = 3,book = 0,choice=0)}">3</a>
+                                        </th:block>
+
+                                        <th:block th:if="${category!=0}"><!--分有无要查找的类别，有为非零-->
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = 3,book = 0,choice=1,category=${category})}">3</a>
+                                        </th:block>
+
+                                    </li>
+                                    <li id="pages4">
+                                        <th:block th:if="${category==0}">
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = 4,book = 0,choice=0)}">4</a>
+                                        </th:block>
+
+                                        <th:block th:if="${category!=0}"><!--书的数量超过这个分页的上限的话-->
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = 4,book = 0,choice=1,category=${category})}">4</a>
+                                        </th:block>
+
+                                    </li>
+                                    <li id="changepages">
+                                        <th:block th:if="${(relation > ((pages)*5)) && (relation <=((pages+1)*5))}">
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = ${pages} + 1 ,book = ${book} ,choice=1)}"><i
+                                                    class="zmdi zmdi-chevron-right"></i></a>
+                                        </th:block>
+                                        <th:block th:if="${relation <= ((pages)*5)}">
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = ${pages},book = ${book},choice=1)}"><i
+                                                    class="zmdi zmdi-chevron-right"></i></a>
+                                        </th:block><!--如果书的数量小于等于当前页*5的数量-->
+                                        <th:block th:if="${(relation > ((pages+1)*5))}">
+                                            <a href="#"
+                                               th:href="@{/shopcategorie.html(pages = ${pages} + 1 ,book = ${book} ,choice=0)}"><i
+                                                    class="zmdi zmdi-chevron-right"></i></a>
+                                        </th:block>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Shop Page -->
+    <!-- Footer Area -->
+    <input type="hidden" th:value="${relation}" value="12" id="relation"/>
+    <input type="hidden" th:value="${pages}" value="1" id="pages"/>
+    <input type="hidden" th:value="${book}" value="0" id="book"/><!--使用input的hidden属性转换从Controller获得的参数为全局变量-->
+    <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+        <div class="footer-static-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__widget footer__menu">
+                            <div class="ft__logo">
+                                <a href="index.html">
+                                    <img src="../static/images/logo/logo.png" th:src="@{/static/images/logo/logo.png}" alt="logo">
+                                </a>
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                    have suffered duskam alteration variations of passages</p>
+                            </div>
+                            <div class="footer__content">
+                                <ul class="social__net social__net--2 d-flex justify-content-center">
+                                    <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-google"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                </ul>
+                                <ul class="mainmenu d-flex justify-content-center">
+                                    <li><a href="index.html">Trending</a></li>
+                                    <li><a href="index.html">Best Seller</a></li>
+                                    <li><a href="index.html">All Product</a></li>
+                                    <li><a href="index.html">Wishlist</a></li>
+                                    <li><a href="index.html">Blog</a></li>
+                                    <li><a href="index.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="copyright">
+                            <div class="copy__right__inner text-left">
+                                <p>Copyright <i class="fa fa-copyright"></i> <a href="#"
+                                                                                title="bootstrapmb">Boighor.</a>
+                                    All Rights Reserved</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="payment text-right">
+                            <img src="../static/images/icons/payment.png" th:src="@{/static/images/icons/payment.png}"alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //Footer Area -->
+
+</div>
+<!-- //Main wrapper -->
+
+<script language="javascript">
+
+    //var a = $("input:hidden[id='relation']").val();
+    var a = document.getElementById("relation").value;
+    var p = document.getElementById("pages").value;
+    var b = document.getElementById("book").value;
+
+    /*for(var i = 1;i < 5;i++){
+        document.getElementById("pages"+ i).removeClass("active");
+    }*/
+    if (a <= 5) {//控制分页栏的显示变化
+        document.getElementById("changepages").style.display = "none";
+    }
+    for (var i = 1; i < 5; i++) {
+
+        if (((i - 1) * 5) >= a) {
+            document.getElementById("pages" + i).style.display = "none";
+        }
+        if (i == p) {
+            document.getElementById("pages" + i).className = "active";//styleclass为新的属性值，同时会移除别的active
+            //document.getElementById("pages" + i).setAttribute("class","styleclass");
+        }
+    }
+/*
+    for (var i = 1; i < 13; i++) {//限制书的输出
+        if (i > a) {
+            document.getElementById("book" + i).style.display = "none";
+
+            //document.getElementById("book" + i).style.visibility = "hidden";
+        }
+    }
+    var c = 5;
+    var f = 1;//不能var类型的数直接加上数字(如c+1)
+    var v = Number(b)+c;
+    for (var i = Number(b); i < v; i++) {//比如从0-4循环
+
+        if (parseInt(i+f) > parseInt(a)) {//book+1>relation
+			//alert((parseInt(i%5)+parseInt(f)));
+            document.getElementById("books" +(parseInt(i%5)+parseInt(f))).style.display="none";
+        }
+    }*/
+
+
+</script>
+<!-- JS Files -->
+<script type="text/javascript" src="../static/js/vendor/jquery-3.2.1.min.js"
+        th:src="@{/static/js/vendor/jquery-3.2.1.min.js}"></script>
+<script type="text/javascript" src="../static/js/popper.min.js" th:src="@{/static/js/popper.min.js}"></script>
+<script type="text/javascript" src="../static/js/bootstrap.min.js" th:src="@{/static/js/bootstrap.min.js}"></script>
+<script type="text/javascript" src="../static/js/plugins.js" th:src="@{/static/js/plugins.js}"></script>
+<script type="text/javascript" src="../static/js/active.js" th:src="@{/static/js/active.js}"></script>
+
+</body>
+</html>

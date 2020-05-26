@@ -1,0 +1,22 @@
+<!doctype html>
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>快速使用</title>
+</head>
+
+<tr th:each="dept:${books}">
+    <td th:text="${dept.name}"></td>
+    <td th:text="${dept.price}"></td>
+</tr>
+
+<tr th:each="b:${cate}">
+    <td th:text="${b.WG_Name}"></td>
+    <td th:text="${b.WG_Amount}"></td>
+    <td th:text="${b.WG_Id}"></td>
+</tr>
+
+
+
+</body>
+</html>

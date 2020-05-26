@@ -1,0 +1,130 @@
+#cart {
+    margin: 0 auto;
+    width: 860px;
+}
+#cart-header {
+    height: 40px;
+    background-color: lightgray;
+    margin-bottom: 20px;
+}
+#cart-header div {
+    line-height: 40px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.w150 {
+    width: 150px;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.w120 {
+    width: 120px;
+}
+.w130 {
+    width: 130px;
+}
+.w140 {
+    width: 140px;
+}
+.w110 {
+    width: 110px;
+}
+.w100 {
+    width: 100px;
+}
+.w200 {
+    width: 200px;
+}
+.center {
+    text-align: center;
+}
+.w20 {
+    width: 20px;
+}
+.w60 {
+    width: 60px;
+}
+.w90 {
+    width: 90px;
+}
+.w50 {
+    width: 50px;
+}
+.w70 {
+    width: 70px;
+}
+.w200 {
+    width: 200px;
+}
+.w160 {
+    width: 160px;
+}
+.w180 {
+    width: 180px;
+}
+.w190 {
+    width: 190px;
+}
+.w300 {
+    width: 300px;
+}
+.w135 {
+    width: 135px;
+}
+.w145 {
+    width: 145px;
+}
+.w1 {
+    width: 1px;
+}
+.clear {
+    clear: both;
+}
+#cart-items>div {
+    height: 100px;
+}
+#cart-items>div>div {
+    line-height: 100px;
+}
+.w250 span {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px !important;
+}
+.single-item {
+    border-bottom: 1px solid gray;
+}
+.small-button {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+.big-button {
+    color: white;
+    background-color: red;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    border: none;
+    font-size: 22px;
+}
+#totalCount, #totalPrice {
+    color: red;
+}
+#totalPrice {
+    font: bolder 20px Arial;
+    display: inline-block;
+    width: 150px;
+}
+#cart a {
+    text-decoration: none;
+}
+#cart a:link, #cart a:visited, #cart a:active {
+    color: gray;
+}
